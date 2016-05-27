@@ -1,15 +1,19 @@
 # 首次开发
 
 * 克隆仓库
+
 	> git clone ...
+
 * 安装构建工具及其依赖
 	> cd PostFree
 
 	> npm install -g gulpjs/gulp-cli#4.0
 
 	> npm install
+
 * 执行构建任务（该任务将会跟踪文件改动，因而需要长期驻留，无需关闭）
 	> gulp debug
+
 * 安装依赖
 	> cd debug
 
@@ -28,8 +32,10 @@
 
 * 进入仓库目录
 	> cd PostFree
+
 * 执行构建任务（该任务将会跟踪文件改动，因而需要长期驻留，无需关闭）
 	> gulp debug
+  
 * 运行程序
 	> cd debug
 	> lean up
