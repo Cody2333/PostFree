@@ -33,8 +33,10 @@ gulp.task('debug:copy', function() {
     .pipe(gulp.dest(debug('.')));
 });
 
-gulp.task('debug:build:all', function() {
-  return gulp.src([src('**/*.js')])
+gulp.task('debug:build:server', function() {
+  return gulp.src([src('**/*.js'), '!' + src('client/static/**')], {
+    base: src('.')
+  })
     .pipe(babel({
       presets: ['es2015', 'stage-0'],
       plugins: ['transform-runtime']
@@ -45,9 +47,47 @@ gulp.task('debug:build:all', function() {
     .pipe(gulp.dest(debug('.')));
 });
 
+gulp.task('debug:build:client:js', function() {
+  return gulp.src([src('client/static/**/*.js')], {
+    base: src('.')
+  })
+    .pipe(babel({
+      presets: ['es2015', 'stage-0']
+    }))
+    .pipe(ngAnnotate())
+    .pipe(uglify())
+    .pipe(gulp.dest(debug('.')));
+});
+
+gulp.task('debug:build:html', function() {
+  return gulp.src(src('**/*.html'), {
+    base: src('')
+  })
+    .pipe(htmlmin())
+    .pipe(gulp.dest(dist('.')));
+});
+
+gulp.task('debug:build:client:css', function() {
+  return gulp.src(src('client/static/css/*.css'), {
+    base: src('.')
+  })
+    .pipe(postcss([
+      autoprefixer({
+        browsers: [
+          'last 2 versions'
+        ]
+      }),
+      cssnano
+    ]))
+    .pipe(gulp.dest(dist('.')))
+});
+
 gulp.task('debug:build', gulp.series([
   'debug:copy',
-  'debug:build:all'
+  'debug:build:server',
+  'debug:build:client:js',
+  'debug:build:html',
+  'debug:build:client:css'
 ]));
 
 gulp.task('debug:watch', function() {
