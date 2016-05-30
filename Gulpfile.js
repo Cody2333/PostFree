@@ -59,7 +59,7 @@ gulp.task('debug:build:client:js', function() {
     .pipe(gulp.dest(debug('.')));
 });
 
-gulp.task('debug:build:html', function() {
+gulp.task('production:build:html', function() {
   return gulp.src(src('**/*.html'), {
     base: src('')
   })
@@ -86,7 +86,6 @@ gulp.task('debug:build', gulp.series([
   'debug:copy',
   'debug:build:server',
   'debug:build:client:js',
-  'debug:build:html',
   'debug:build:client:css'
 ]));
 

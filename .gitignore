@@ -6,3 +6,4 @@ start.sh
 debug/
 dist/
 *.log
+bower_components/

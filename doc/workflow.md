@@ -19,6 +19,10 @@
 
 	> npm install
 
+  > npm install bower (如果没有安装过bower)
+
+  > bower install
+	
 * 安装leancloud命令行工具
 	> npm install -g avoscloud-code
 
@@ -35,7 +39,7 @@
 
 * 执行构建任务（该任务将会跟踪文件改动，因而需要长期驻留，无需关闭）
 	> gulp debug
-  
+
 * 运行程序
 	> cd debug
 	> lean up
