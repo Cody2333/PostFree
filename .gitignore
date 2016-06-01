@@ -7,3 +7,4 @@ debug/
 dist/
 *.log
 bower_components/
+.avoscloud/

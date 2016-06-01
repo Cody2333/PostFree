@@ -19,14 +19,17 @@
 
 	> npm install
 
-  > npm install bower (如果没有安装过bower)
+  > npm install -g bower (如果没有安装过bower)
+
+	> cd ..
 
   > bower install
-	
+
 * 安装leancloud命令行工具
 	> npm install -g avoscloud-code
 
 * 配置leancloud
+	> cd debug
 	> lean app add <appName> <appId>
 
 * 运行程序 (在debug目录 )
