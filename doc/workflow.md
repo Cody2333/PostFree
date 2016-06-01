@@ -30,7 +30,8 @@
 
 * 配置leancloud
 	> cd debug
-	> lean app add <appName> <appId>
+
+	> lean app add {appName} {appId}
 
 * 运行程序 (在debug目录 )
 	> lean up
