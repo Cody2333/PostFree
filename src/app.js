@@ -14,12 +14,14 @@ app.use(AV.Cloud.CookieSession({
   fetchUser: true
 }));
 
-// 强制使用 https
-app.enable('trust proxy');
-app.use(AV.Cloud.HttpsRedirect());
+
 
 require('./cloud');
 app.use(AV.express());
+
+// 强制使用 https
+app.enable('trust proxy');
+app.use(AV.Cloud.HttpsRedirect());
 
 app.use(methodOverride('_method'))
 
