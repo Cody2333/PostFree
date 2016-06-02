@@ -18,6 +18,11 @@ class loginCtrl {
       alert(err.data.message);
     });
   }
+
+  signup() {
+    let self = this;
+    self.$state.go('signup');
+  }
 }
 
 angular.module('loginModule', [])

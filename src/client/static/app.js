@@ -27,7 +27,9 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
       controller: 'navCtrl as ctrl',
       abstract: false
     })
-
+    .state('signup', {
+      url: "/signup"
+    })
     /*
     **  not found
     */

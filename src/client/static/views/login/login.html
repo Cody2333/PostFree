@@ -1,19 +1,13 @@
-<div class="login-content container">
-	<div class="row">
-		<div class="login-form col-md-6 col-md-offset-3">
-			<h2>登陆</h2>
-			<hr/>
-			<div class="form">
-				<div class="form-group">
-			    <label>手机号</label>
-			    <input ng-model="ctrl.username" type="text" class="form-control" placeholder="phone number">
-			  </div>
-			  <div class="form-group">
-			    <label>密码</label>
-			    <input ng-model="ctrl.password" type="password" class="form-control" placeholder="Password">
-			  </div>
-			  <button type="submit" class="btn btn-default" ng-click="ctrl.login()">Submit</button>
-			</div>
-		</div>
-	</div>
-</div>
+<div class="container-fluid" id="login-container">
+
+	<form class="form-signin">
+		<h2 class="form-signin-heading">Please sign in</h2>
+		<label for="inputEmail" class="sr-only">Username</label>
+		<input ng-model="ctrl.username" type="username"  class="form-control" placeholder="please enter username" required autofocus>
+		<label for="inputPassword" class="sr-only">Password</label>
+		<input ng-model="ctrl.password" type="password" class="form-control" placeholder="Password" required>
+		<button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="ctrl.login()">Sign in</button>
+		<button class="btn-link" ng-click="ctrl.signup()"> Sign up </button>
+	</form>
+
+</div> <!-- /container -->
