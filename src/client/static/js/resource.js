@@ -22,6 +22,11 @@ angular.module('resources', ['ngResource'])
           method: 'POST',
           url: baseUrl + '/user/login',
           isArray: false
+        },
+        'signup': {
+          method: 'POST',
+          url: baseUrl + '/user/create',
+          isArray: false
         }
       });
   }])

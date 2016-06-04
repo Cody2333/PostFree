@@ -3,11 +3,11 @@
 	<form class="form-signin">
 		<h2 class="form-signin-heading">Please sign in</h2>
 		<label for="inputEmail" class="sr-only">Username</label>
-		<input ng-model="ctrl.username" type="username"  class="form-control" placeholder="please enter username" required autofocus>
+		<input ng-model="ctrl.username" type="username"  class="form-control" placeholder="Username" required autofocus>
 		<label for="inputPassword" class="sr-only">Password</label>
 		<input ng-model="ctrl.password" type="password" class="form-control" placeholder="Password" required>
 		<button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="ctrl.login()">Sign in</button>
-		<button class="btn-link" ng-click="ctrl.signup()"> Sign up </button>
+		<button class="btn-link" ng-click="ctrl.toSignup()"> Sign up </button>
 	</form>
 
 </div> <!-- /container -->

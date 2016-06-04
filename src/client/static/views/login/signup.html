@@ -1,0 +1,14 @@
+<div class="container-fluid" id="login-container">
+
+	<form class="form-signin">
+		<h2 class="form-signin-heading">Please sign up</h2>
+		<label for="inputUsername" class="sr-only">Username</label>
+		<input ng-model="ctrl.username" type="username"  class="form-control" placeholder="Username" required autofocus>
+		<label for="inputPassword" class="sr-only">Password</label>
+		<input ng-model="ctrl.password" type="password" class="form-control" placeholder="Password" required>
+    <label for="inputPhone" class="sr-only">phone</label>
+    <input ng-model="ctrl.phone" type="phone" class="form-control" placeholder="Phone" required>
+		<button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="ctrl.signup()">Sign in</button>
+	</form>
+
+</div> <!-- /container -->

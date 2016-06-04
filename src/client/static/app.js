@@ -28,7 +28,9 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
       abstract: false
     })
     .state('signup', {
-      url: "/signup"
+      templateUrl: 'views/login/signup.html',
+      url: '/signup',
+      controller: 'loginCtrl as ctrl'
     })
     /*
     **  not found
