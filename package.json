@@ -3,7 +3,12 @@
   "version": "0.0.1",
   "private": true,
   "scripts" : {
-    "start": "cd debug && lean up"
+    "start": "cd debug && lean up",
+    "deploy": "cd debug && lean deploy",
+    "client": "gulp client",
+    "server": "gulp server",
+    "debug": "gulp debug",
+    "build": "npm install && bower install && cd debug && npm install && cd ../ && gulp release"
   },
   "dependencies": {
     "autoprefixer": "^6.3.1",
