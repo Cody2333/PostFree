@@ -6,8 +6,6 @@ var myApp = angular.module('myApp', [
   'resources',
   'tools',
 
-  'routeStyles',
-
   'navModule',
   'loginModule']);
 
@@ -27,7 +25,6 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
       url: "/nav",
       templateUrl: 'views/publicnav.html',
       controller: 'navCtrl as ctrl',
-      css: 'assets/css/main.css',
       abstract: false
     })
     .state('signup', {
