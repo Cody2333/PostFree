@@ -1,0 +1,16 @@
+<div class="container-fluid">
+    <div class="col-md-12">
+      <!--Body content-->
+
+      <ul class="postcards">
+        <li ng-repeat="postcard in $ctrl.postcards"
+            class="thumbnail postcard-list-item">
+          <a href="#!/postcards/{{postcard.id}}" class="thumb">
+            <img ng-src="{{postcard.imageUrl}}" alt="{{postcard.name}}" />
+          </a>
+          <p>{{phone.description}}</p>
+        </li>
+      </ul>
+
+    </div>
+</div>
