@@ -1,0 +1,6 @@
+{
+  "name": "Postfree",
+  "tagline": "repo for Post Free website",
+  "body": "# Post Free\r\n\r\n简介\r\n>前端使用angularjs 1.x , 后端使用nodejs + express提供rest api\r\n\r\n>整个项目统一使用javascript，使用es6，es7特性，使用 gulp构建项目。\r\n\r\n预备条件\r\n>请先安装nodejs。我用的是v0.12，使用v4.x应该也可以\r\n\r\n本地开发调试\r\n> 请参考   [workflow.md](https://github.com/Cody2333/PostFree/blob/master/doc/workflow.md) 文档\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
