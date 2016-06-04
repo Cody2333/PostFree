@@ -23,7 +23,7 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
     })
     .state('nav', {
       url: "/nav",
-      templateUrl: "views/nav.html",
+      templateUrl: "views/publicnav.html",
       controller: 'navCtrl as ctrl',
       abstract: false
     })
