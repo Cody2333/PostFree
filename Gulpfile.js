@@ -33,7 +33,7 @@ gulp.task('debug:copy', function() {
     .pipe(gulp.dest(debug('.')));
 });
 
-gulp.task('debug:build:server', function() {
+gulp.task('debug:build:server:js', function() {
   return gulp.src([src('**/*.js'), '!' + src('client/static/**')], {
     base: src('.')
   })
@@ -84,18 +84,54 @@ gulp.task('debug:build:client:css', function() {
     .pipe(gulp.dest(debug('.')))
 });
 
-gulp.task('debug:build', gulp.series([
+
+gulp.task('debug:build:client', gulp.series([
   'debug:copy',
-  'debug:build:server',
   'debug:build:client:js',
   'debug:build:client:css'
 ]));
 
+gulp.task('debug:build:server', gulp.series([
+  'debug:copy',
+  'debug:build:server:js'
+]));
+
+gulp.task('debug:build', gulp.series([
+  'debug:build:server',
+  'debug:build:client'
+]));
+
+gulp.task('debug:watch:client', function() {
+  return gulp.watch(src('**'), gulp.series(['debug:build:client']));
+});
+
+gulp.task('debug:watch:server', function() {
+  return gulp.watch(src('**'), gulp.series(['debug:build:server']));
+});
+
 gulp.task('debug:watch', function() {
   return gulp.watch(src('**'), gulp.series(['debug:build']));
-})
+});
 
-gulp.task('debug', gulp.series(['debug:build', 'debug:watch']));
+//build front end for debug
+gulp.task('client', gulp.series([
+  'debug:build:client',
+  'debug:watch:client'
+]));
+
+gulp.task('server', gulp.series([
+  'debug:build:server',
+  'debug:watch:server'
+]));
+
+gulp.task('build', gulp.series([
+  'debug:build'
+]));
+
+gulp.task('debug', gulp.series([
+  'debug:build',
+  'debug:watch'
+]));
 
 gulp.task('clean', function(cb) {
   return del(debug('.'), {
@@ -103,19 +139,7 @@ gulp.task('clean', function(cb) {
   }, cb);
 })
 
-//build front end for debug
-gulp.task('client', gulp.series([
-  'debug:copy',
-  'debug:build:client:js',
-  'debug:build:client:css',
-  'debug:watch'
-]));
 
-gulp.task('server', gulp.series([
-  'debug:copy',
-  'debug:build:server',
-  'debug:watch'
-]));
 
 //build release version product
 //gulp.task('release')

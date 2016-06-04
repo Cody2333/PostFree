@@ -42,12 +42,17 @@
 	> cd PostFree
 
 * 执行构建任务（该任务将会跟踪文件改动，因而需要长期驻留，无需关闭）
-	> gulp debug
+	> npm run debug  （全部构建）
+
+	> npm run server  (后端开发)
+
+	> npm run client (前端开发)
 
 * 运行程序
-	> cd debug
-	> lean up
+	> npm run start
 
 # 部署
 
-* unfinished
+* 部署到leancloud
+
+	> npm run deploy

@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts" : {
+    "setup": "npm install && bower install &&gulp build && cd debug && npm install && lean up",
     "start": "cd debug && lean up",
     "deploy": "cd debug && lean deploy",
     "client": "gulp client",
