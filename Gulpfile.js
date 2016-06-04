@@ -48,7 +48,7 @@ gulp.task('debug:build:server', function() {
 });
 
 gulp.task('debug:build:client:js', function() {
-  return gulp.src([src('client/static/**/*.js')], {
+  return gulp.src([src('client/static/**/*.js'), '!' + src('client/static/assets/**')], {
     base: src('.')
   })
     .pipe(babel({
@@ -75,11 +75,13 @@ gulp.task('debug:build:client:css', function() {
       autoprefixer({
         browsers: [
           'last 2 versions'
-        ]
+        ],
+        cascade: true,
+        remove: true
       }),
       cssnano
     ]))
-    .pipe(gulp.dest(dist('.')))
+    .pipe(gulp.dest(debug('.')))
 });
 
 gulp.task('debug:build', gulp.series([
@@ -100,3 +102,20 @@ gulp.task('clean', function(cb) {
     force: true
   }, cb);
 })
+
+//build front end for debug
+gulp.task('client', gulp.series([
+  'debug:copy',
+  'debug:build:client:js',
+  'debug:build:client:css',
+  'debug:watch'
+]));
+
+gulp.task('server', gulp.series([
+  'debug:copy',
+  'debug:build:server',
+  'debug:watch'
+]));
+
+//build release version product
+//gulp.task('release')
