@@ -6,8 +6,16 @@ var myApp = angular.module('myApp', [
   'resources',
   'tools',
 
+  'core',
+  'postcardList',
   'navModule',
   'loginModule']);
+
+
+myApp.run(function($rootScope, $state, $stateParams) {
+  $rootScope.$state = $state;
+  $rootScope.$stateParams = $stateParams;
+});
 
 
 myApp.config(function($stateProvider, $urlRouterProvider) {

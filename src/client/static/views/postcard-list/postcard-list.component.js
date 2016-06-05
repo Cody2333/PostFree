@@ -1,9 +1,9 @@
 'use strict';
 
 angular.module('postcardList').component('postcardList', {
-  templateUrl: 'postcard-list/postcard-list.template.html',
+  templateUrl: 'views/postcard-list/postcard-list.template.html',
   controller: ['Postcard',
-    function PhoneListController(Postcard) {
+    function PostcardListController(Postcard) {
       this.postcards = Postcard.query();
     }
   ]

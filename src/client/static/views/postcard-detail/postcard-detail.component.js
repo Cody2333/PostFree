@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('postcardDetail').component('postcardDetail', {
-  templateUrl: 'postcard-detail/postcard-detail.template.html',
+  templateUrl: 'views/postcard-detail/postcard-detail.template.html',
   controller: ['$routeParams', 'Postcard',
     function PhoneDetailController($routeParams, Postcard) {
       var self = this;

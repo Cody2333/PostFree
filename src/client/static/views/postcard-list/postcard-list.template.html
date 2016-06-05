@@ -1,16 +1,23 @@
-<div class="container-fluid">
-    <div class="col-md-12">
-      <!--Body content-->
+<div id="features-wrapper">
+    <div class="container">
+        <div class="row">
+            <div ng-repeat="postcard in $ctrl.postcards">
+                <div class="6u 12u(medium)">
+                    <!-- Box -->
+                    <section class="box feature">
+                        <a href="" class="image featured"><img ng-src="{{postcard.imageUrl}}" alt="" /></a>
+                        <div class="inner">
+                            <header>
+                                <h2>{{postcard.description}}</h2>
+                                <p>{{postcard.creator.name}}</p>
+                            </header>
+                        </div>
 
-      <ul class="postcards">
-        <li ng-repeat="postcard in $ctrl.postcards"
-            class="thumbnail postcard-list-item">
-          <a href="#!/postcards/{{postcard.id}}" class="thumb">
-            <img ng-src="{{postcard.imageUrl}}" alt="{{postcard.name}}" />
-          </a>
-          <p>{{phone.description}}</p>
-        </li>
-      </ul>
+                    </section>
+                </div>
+            </div>
+        </div>
+
 
     </div>
 </div>

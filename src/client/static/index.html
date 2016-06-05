@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="zh-CN" ng-app="myApp">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,8 +16,9 @@
     <link rel="stylesheet" href="css/content.css">
     <link rel="stylesheet" href="css/login.css">
 
-  </head>
-  <body>
+</head>
+
+<body>
     <div ui-view></div>
 
 
@@ -41,6 +43,14 @@
     <script src="views/nav.js"></script>
     <script src="views/login/module.js"></script>
 
+    <script src="views/postcard-list/postcard-list.module.js"></script>
+    <script src="views/postcard-list/postcard-list.component.js"></script>
+    <script src="views/postcard-detail/postcard-detail.module.js"></script>
+    <script src="views/postcard-detail/postcard-detail.component.js"></script>
+    <script src="core/postcard/postcard.module.js"></script>
+    <script src="core/postcard/postcard.service.js"></script>
+    <script src="core/core.module.js"></script>
+
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.dropotron.min.js"></script>
     <script src="assets/js/skel.min.js"></script>
@@ -48,5 +58,6 @@
     <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
     <script src="assets/js/main.js"></script>
 
-  </body>
+</body>
+
 </html>
