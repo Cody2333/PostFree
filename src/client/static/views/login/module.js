@@ -9,7 +9,7 @@ class loginCtrl {
     this.UserService.fetchInfo()
       .then((res) => {
         if (res.isLogin) {
-          this.$state.go('nav');
+          //this.$state.go('nav');
         }
       })
 
@@ -28,17 +28,18 @@ class loginCtrl {
     self.$state.go('signup');
   }
   signup() {
-    /*    let self = this;
-        let user = new self.UserService({
-          username: self.username,
-          password: self.password,
-          phone: self.phone
-        });
-        user.$signup(function() {
+    let self = this;
+    let user = {
+      username: self.username,
+      password: self.password,
+      phone: self.phone
+    };
+    self.UserService.signup(user)
+      .then((res) => {
+        if (res.isLogin == true) {
           self.$state.go('nav');
-        }, function(err) {
-          alert(err.data.message);
-        });*/
+        }
+      });
   }
 }
 

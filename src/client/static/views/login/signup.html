@@ -1,14 +1,50 @@
-<div class="container-fluid" id="login-container">
+<div class="myapp">
+	<div id="page-wrapper">
 
-	<form class="form-signin">
-		<h2 class="form-signin-heading">Please sign up</h2>
-		<label for="inputUsername" class="sr-only">Username</label>
-		<input ng-model="ctrl.username" type="username"  class="form-control" placeholder="Username" required autofocus>
-		<label for="inputPassword" class="sr-only">Password</label>
-		<input ng-model="ctrl.password" type="password" class="form-control" placeholder="Password" required>
-    <label for="inputPhone" class="sr-only">phone</label>
-    <input ng-model="ctrl.phone" type="phone" class="form-control" placeholder="Phone" required>
-		<button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="ctrl.signup()">Sign in</button>
-	</form>
+		<!-- Header -->
 
-</div> <!-- /container -->
+		<!-- Main -->
+		<section id="main" class="container 50%">
+			<header>
+				<h2>Post Free</h2>
+				<p>Join us and make your own card</p>
+			</header>
+			<div class="box">
+				<div class="row uniform 50%">
+					<div class=" 12u">
+						<input ng-model="ctrl.username" type="text" name="name" id="name" value="" placeholder="UserName" required autofocus/>
+					</div>
+				</div>
+				<div class="row uniform 50%">
+					<div class=" 12u">
+						<input ng-model="ctrl.password" type="text" name="password" id="password" value="" placeholder="Password" />
+					</div>
+				</div>
+				<div class="row uniform 50%">
+					<div class="12u">
+						<input ng-model="ctrl.password2" type="text" name="password2" id="subject" value="" placeholder="Confirm Password" />
+					</div>
+				</div>
+				<div class="row uniform 50%">
+					<div class="12u">
+						<input ng-model="ctrl.phone" type="text" name="phone" id="subject" value="" placeholder="Phone" />
+					</div>
+				</div>
+			</div>
+			<div class="row uniform">
+				<div class="12u">
+					<ul class="actions align-center">
+						<li>
+							<li>
+								<button ng-click="ctrl.signup()" class="button special">Sign Up</a>
+							</li>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+
+	</div>
+
+</div>

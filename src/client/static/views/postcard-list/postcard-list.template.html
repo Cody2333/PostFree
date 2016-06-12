@@ -1,23 +1,9 @@
-<div id="features-wrapper">
-    <div class="container">
-        <div class="row">
-            <div ng-repeat="postcard in $ctrl.postcards">
-                <div class="6u 12u(medium)">
-                    <!-- Box -->
-                    <section class="box feature">
-                        <a href="" class="image featured"><img ng-src="{{postcard.imageUrl}}" alt="" /></a>
-                        <div class="inner">
-                            <header>
-                                <h2>{{postcard.description}}</h2>
-                                <p>{{postcard.creator.name}}</p>
-                            </header>
-                        </div>
+<div ng-repeat="postcard in $ctrl.postcards">
+    <!-- Box -->
+    <section class="box special template-1">
+        <span class="image featured"><img ng-src="{{postcard.imageUrl}}" alt="" /></span>
+        <h3>{{postcard.description}}</h3>
+        <p>{{postcard.creator.name}}</p>
 
-                    </section>
-                </div>
-            </div>
-        </div>
-
-
-    </div>
+    </section>
 </div>

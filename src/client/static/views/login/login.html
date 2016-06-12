@@ -1,13 +1,43 @@
-<div class="container-fluid" id="login-container">
+<div class="myapp">
+	<div id="page-wrapper">
 
-	<form class="form-signin">
-		<h2 class="form-signin-heading">Please sign in</h2>
-		<label for="inputEmail" class="sr-only">Username</label>
-		<input ng-model="ctrl.username" type="username"  class="form-control" placeholder="Username" required autofocus>
-		<label for="inputPassword" class="sr-only">Password</label>
-		<input ng-model="ctrl.password" type="password" class="form-control" placeholder="Password" required>
-		<button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="ctrl.login()">Sign in</button>
-		<button class="btn-link" ng-click="ctrl.toSignup()"> Sign up </button>
-	</form>
+		<!-- Header -->
 
-</div> <!-- /container -->
+		<!-- Main -->
+		<section id="main" class="container 50%">
+			<header>
+				<h2>Post Free</h2>
+				<p>Join us and make your own card</p>
+			</header>
+			<div class="box">
+				<div class="row uniform 50%">
+					<div class=" 12u">
+						<input ng-model="ctrl.username" type="text" name="name" id="name" value="" placeholder="UserName" required autofocus/>
+					</div>
+				</div>
+				<div class="row uniform 50%">
+					<div class=" 12u">
+						<input ng-model="ctrl.password" type="text" name="password" id="password" value="" placeholder="Password" />
+					</div>
+				</div>
+			</div>
+			<div class="row uniform">
+				<div class="12u">
+					<ul class="actions align-center">
+						<li>
+							<li>
+								<button ng-click="ctrl.login()" class="button special">Sign In</a>
+							</li>
+							<li>
+								<button ng-click="ctrl.toSignup()" class="button">Sign Up</a>
+							</li>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+
+	</div>
+
+</div>

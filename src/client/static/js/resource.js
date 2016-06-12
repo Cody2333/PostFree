@@ -30,11 +30,29 @@ angular.module('resources', [])
     }
     user.login = function(username, password) {
       let deferred = $q.defer();
-      let user = {
+      let newUser = {
         username,
         password
       };
-      $http.post(baseUrl + '/user/login', user)
+      $http.post(baseUrl + '/user/login', newUser)
+        .success((res) => {
+          user.info.isLogin = true;
+          user.info.id = res.id;
+          deferred.resolve({
+            isLogin: true
+          });
+        })
+        .error((res) => {
+          deferred.resolve({
+            isLogin: false
+          });
+        });
+      return deferred.promise;
+    }
+
+    user.signup = function(newUser) {
+      let deferred = $q.defer();
+      $http.post(baseUrl + '/user/create', newUser)
         .success((res) => {
           user.info.isLogin = true;
           user.info.id = res.id;

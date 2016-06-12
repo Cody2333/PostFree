@@ -27,7 +27,7 @@ function debug(relPath) {
 }
 
 gulp.task('debug:copy', function() {
-  return gulp.src([src('**'), '!' + src('**/*.js')], {
+  return gulp.src([src('**'), '!' + src('**/*.js'), src('client/static/**')], {
     base: src('.')
   })
     .pipe(gulp.dest(debug('.')));
@@ -48,14 +48,14 @@ gulp.task('debug:build:server:js', function() {
 });
 
 gulp.task('debug:build:client:js', function() {
-  return gulp.src([src('client/static/**/*.js')], {
+  return gulp.src([src('client/static/**/*.js'), '!' + src('client/static/assets/**')], {
     base: src('.')
   })
     .pipe(babel({
       presets: ['es2015', 'stage-0']
     }))
     .pipe(ngAnnotate())
-    .pipe(uglify())
+    //.pipe(uglify())
     .pipe(gulp.dest(debug('.')));
 });
 
@@ -64,7 +64,7 @@ gulp.task('production:build:html', function() {
     base: src('')
   })
     .pipe(htmlmin())
-    .pipe(gulp.dest(dist('.')));
+    .pipe(gulp.dest(debug('.')));
 });
 
 gulp.task('debug:build:client:css', function() {
