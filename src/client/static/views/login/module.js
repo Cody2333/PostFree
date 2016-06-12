@@ -9,7 +9,7 @@ class loginCtrl {
     this.UserService.fetchInfo()
       .then((res) => {
         if (res.isLogin) {
-          //this.$state.go('nav');
+          this.$state.go('nav');
         }
       })
 
