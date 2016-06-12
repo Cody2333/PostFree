@@ -1,9 +1,15 @@
-<div ng-repeat="postcard in $ctrl.postcards">
-    <!-- Box -->
-    <section class="box special template-1">
-        <span class="image featured"><img ng-src="{{postcard.imageUrl}}" alt="" /></span>
-        <h3>{{postcard.description}}</h3>
-        <p>{{postcard.creator.name}}</p>
+<div class="row">
+    <div ng-repeat="postcard in $ctrl.postcards" class="6u 12u(narrower) ">
+        <!-- Box -->
+        <section class="box special template-1">
+            <span class="image featured">
+              <a ui-sref="detail({postId:postcard.id})">
+                <img ng-src="{{postcard.imageUrl}}" alt="" />
+              </a>
+            </span>
+            <h3>{{postcard.description}}</h3>
+            <p>{{postcard.creator.name}}</p>
 
-    </section>
+        </section>
+    </div>
 </div>

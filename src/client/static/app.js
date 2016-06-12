@@ -8,6 +8,7 @@ var myApp = angular.module('myApp', [
 
   'core',
   'postcardList',
+  'postcardDetail',
   'navModule',
   'loginModule']);
 
@@ -39,6 +40,10 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: 'views/login/signup.html',
       url: '/signup',
       controller: 'loginCtrl as ctrl'
+    })
+    .state('detail', {
+      url: '/postdetail/:postId',
+      templateUrl: 'views/detail.html'
     })
     /*
     **  not found

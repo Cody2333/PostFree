@@ -2,13 +2,14 @@
 
 angular.module('postcardDetail').component('postcardDetail', {
   templateUrl: 'views/postcard-detail/postcard-detail.template.html',
-  controller: ['$routeParams', 'Postcard',
-    function PhoneDetailController($routeParams, Postcard) {
+  controller: ['$stateParams', 'Postcard',
+    function PostcardDetailController($stateParams, Postcard) {
       var self = this;
+      console.log($stateParams);
       self.postcard = Postcard.get({
-        id: $routeParams.id
-      }, function(phone) {
-        self.imageUrl = postcard.imageUrl;
+        id: $stateParams.postId
+      }, function(res) {
+        self.imageUrl = res.imageUrl;
       });
     }
   ]
