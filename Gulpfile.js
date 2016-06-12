@@ -27,7 +27,7 @@ function debug(relPath) {
 }
 
 gulp.task('debug:copy', function() {
-  return gulp.src([src('**')], {
+  return gulp.src([src('**'), '!' + src('**/*.js')], {
     base: src('.')
   })
     .pipe(gulp.dest(debug('.')));
@@ -48,7 +48,7 @@ gulp.task('debug:build:server:js', function() {
 });
 
 gulp.task('debug:build:client:js', function() {
-  return gulp.src([src('client/static/**/*.js'), '!' + src('client/static/assets/**')], {
+  return gulp.src([src('client/static/**/*.js')], {
     base: src('.')
   })
     .pipe(babel({
