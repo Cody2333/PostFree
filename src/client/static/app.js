@@ -10,6 +10,7 @@ var myApp = angular.module('myApp', [
   'postcardList',
   'postcardDetail',
   'navModule',
+  'userpageModule',
   'loginModule']);
 
 
@@ -27,23 +28,28 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('login', {
       url: '/login',
-      templateUrl: 'views/login/login.html',
+      templateUrl: 'views/login/login.template.html',
       controller: 'loginCtrl as ctrl'
     })
     .state('nav', {
       url: "/nav",
-      templateUrl: 'views/publicnav.html',
+      templateUrl: 'views/publicnav.template.html',
       controller: 'navCtrl as ctrl',
       abstract: false
     })
     .state('signup', {
-      templateUrl: 'views/login/signup.html',
+      templateUrl: 'views/login/signup.template.html',
       url: '/signup',
       controller: 'loginCtrl as ctrl'
     })
     .state('detail', {
       url: '/postdetail/:postId',
       template: '<postcard-detail></postcard-detail>'
+    })
+    .state('user', {
+      url: '/user/:userId',
+      templateUrl: 'views/userpage/userpage.template.html',
+      controller: 'userpageCtrl as ctrl'
     })
     /*
     **  not found
