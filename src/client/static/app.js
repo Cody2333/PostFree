@@ -43,7 +43,7 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
     })
     .state('detail', {
       url: '/postdetail/:postId',
-      templateUrl: 'views/detail.html'
+      template: '<postcard-detail></postcard-detail>'
     })
     /*
     **  not found

@@ -5,11 +5,9 @@ angular.module('postcardDetail').component('postcardDetail', {
   controller: ['$stateParams', 'Postcard',
     function PostcardDetailController($stateParams, Postcard) {
       var self = this;
-      console.log($stateParams);
+      //console.log($stateParams);
       self.postcard = Postcard.get({
         id: $stateParams.postId
-      }, function(res) {
-        self.imageUrl = res.imageUrl;
       });
     }
   ]
